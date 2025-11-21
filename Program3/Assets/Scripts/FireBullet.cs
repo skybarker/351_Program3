@@ -6,6 +6,9 @@ public class FireBullet : MonoBehaviour
 {
     public GameObject bullet;
     public AudioSource Gunshot;
+    public float shotCD = 1;
+    private float shotTimer = 1;
+
 
     
     // Start is called before the first frame update
@@ -17,7 +20,17 @@ public class FireBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) { Fire(bullet); }
+        shotTimer += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.F)) 
+        { 
+
+            if (shotTimer>shotCD) 
+            {
+                Fire(bullet);
+                shotTimer = 0;
+            }
+  
+        }
 
     }
 

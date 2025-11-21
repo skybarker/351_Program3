@@ -16,4 +16,26 @@ public class Bullet : MonoBehaviour
 
     }   
 
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            // Destroy the enemy
+            Destroy(col.gameObject);
+
+            // Destroy the bullet
+            Destroy(gameObject);
+        }
+
+        if (col.gameObject.CompareTag("Explosive"))
+        {
+            // Destroy the enemy
+            Destroy(col.gameObject);
+
+            // Destroy the bullet
+            Destroy(gameObject);
+        }
+
+    }
+
 }
