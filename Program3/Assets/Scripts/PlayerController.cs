@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
             animController.SetTrigger("Kick");
             animController.SetInteger("KickID", Random.Range(0, 99));
 
+            //rigidBody.AddRelativeForce(input.x * Time.deltaTime, 0, input.y * Time.deltaTime);
+            //rigidBody.AddRelativeTorque(0, lookValue * Time.deltaTime,0);
+
         }
 
         // allow movement when input detected and not crouching
