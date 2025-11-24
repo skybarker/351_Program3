@@ -4,17 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Explosive
+  - Enemy
+  - Kickable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Kickable
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
