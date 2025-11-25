@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Kickable
   - DeathSound
+  - Bullet
   layers:
   - Default
   - TransparentFX

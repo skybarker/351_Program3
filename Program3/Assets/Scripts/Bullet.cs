@@ -37,10 +37,10 @@ public class Bullet : MonoBehaviour
         if (col.gameObject.CompareTag("Explosive"))
         {
             // Destroy the enemy
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
 
             // Destroy the bullet
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
     }

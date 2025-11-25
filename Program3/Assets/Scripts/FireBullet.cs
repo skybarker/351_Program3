@@ -29,7 +29,7 @@ public class FireBullet : MonoBehaviour
             {
                 Fire(bullet);
                 shotTimer = 0;
-                //music.SwitchMusic(MusicType.Fight);
+                music.playShot();
             }
   
         }
