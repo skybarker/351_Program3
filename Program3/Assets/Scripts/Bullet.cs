@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float lifetime = 2f;
+    public float lifetime = 3f;
     public float thrust = 1.0f;
     public Rigidbody rb;
+    //private AudioClip death;    
+   // private AudioSource Enemy_shot;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(0, 0, -thrust, ForceMode.Impulse);
+        rb.AddRelativeForce(0, 0, thrust, ForceMode.Impulse);
         Destroy(gameObject, lifetime);
+
 
     }   
 
@@ -21,7 +25,10 @@ public class Bullet : MonoBehaviour
         if (col.gameObject.CompareTag("Enemy"))
         {
             // Destroy the enemy
+            //Enemy_shot = col.gameObject.GetComponent<AudioSource>();
+            //Enemy_shot.Play();
             Destroy(col.gameObject);
+               
 
             // Destroy the bullet
             Destroy(gameObject);

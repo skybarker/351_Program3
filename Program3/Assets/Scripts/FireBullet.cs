@@ -8,13 +8,14 @@ public class FireBullet : MonoBehaviour
     public AudioSource Gunshot;
     public float shotCD = 1;
     private float shotTimer = 1;
-
+    private MusicController music;
 
     
     // Start is called before the first frame update
     void Start()
     {
-        
+    GameObject gc = GameObject.FindGameObjectWithTag("GameController"); 
+    music = gc.GetComponent<MusicController>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class FireBullet : MonoBehaviour
             {
                 Fire(bullet);
                 shotTimer = 0;
+                //music.SwitchMusic(MusicType.Fight);
             }
   
         }

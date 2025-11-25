@@ -76,7 +76,7 @@ public class MusicController : MonoBehaviour
 
         
         // get a reference to the input map
-        //GameObject gc = GameObject.FindGameObjectWithTag("GameController");
+        GameObject gc = GameObject.FindGameObjectWithTag("GameController");
         //_inputMap = gc.GetComponent<InputController>();
 
         // create and initialize the hashtable for music look-up
