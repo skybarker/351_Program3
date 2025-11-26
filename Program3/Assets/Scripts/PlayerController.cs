@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables; 
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,8 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject hero;
     public PlayableDirector director;
-    public GameObject pCam;
-    Animation anim;
+    //public Camera pCam;
     Animator animController;
     Rigidbody rigidBody;
     
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             director.Stop();
-            pCam.SetActive(true);
+            //pCam.enabled = true;
         }
 
         // allow movement when input detected and not crouching
