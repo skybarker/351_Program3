@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
    public GameObject enemy;
    public AudioClip death;
    private AudioClip[] taunts;
-   private AudioSource audio;
+   private AudioSource enemyAudio;
    
    private float tauntTimer = 0;
    private float tauntTrigger;
@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
         taunts[0] = taunt1;
         taunts[1] = taunt2;
         taunts[2] = taunt3;
-        audio = enemy.GetComponent<AudioSource>();
+        enemyAudio = enemy.GetComponent<AudioSource>();
         tauntTrigger = Random.Range(10f,30f);
         animController = enemy.GetComponent<Animator>();
     }
@@ -42,35 +42,45 @@ public class EnemyController : MonoBehaviour
             tauntTimer += Time.deltaTime;
             if (tauntTimer > tauntTrigger)
             {
-                direction = (target.position - transform.position).normalized;
-                direction.y = 0f;
-                int randomIndex = Random.Range(0, 2);
-                audio.clip = taunts[randomIndex];
-                audio.Play();
-
+                Taunt();
                 tauntTimer = 0;
                 tauntTrigger = Random.Range(10f,30f);
             }
-                newDirection = Vector3.RotateTowards(transform.forward, direction, rotationSpeed * Time.deltaTime, 0.0f);
-                transform.rotation = Quaternion.LookRotation(newDirection);
+
         }
     }
 
     public void Die()
     {
-        audio.clip = death;
-        audio.Play();
+        enemyAudio.clip = death;
+        enemyAudio.Play();
         animController.SetTrigger("Die");
         _shouldTaunt = false;
     }
     
     private void OnTriggerEnter(Collider other)
     {
-        _shouldTaunt = true;
+        if (other.CompareTag("Player"))
+        {
+            Taunt();
+            _shouldTaunt = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        _shouldTaunt = false;
+        if (other.CompareTag("Player"))
+            _shouldTaunt = false;
+    }
+
+    private void Taunt()
+    {
+        direction = (target.position - transform.position).normalized;
+        direction.y = 0f;
+        int randomIndex = Random.Range(0, 2);
+        enemyAudio.clip = taunts[randomIndex];
+        enemyAudio.Play();
+        newDirection = Vector3.RotateTowards(transform.forward, direction, rotationSpeed * Time.deltaTime, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDirection);
     }
 }
 

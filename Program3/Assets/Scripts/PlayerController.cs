@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     Animator animController;
     Rigidbody rigidBody;
     GameObject currentCam;
-    private AudioSource audio;
+    private AudioSource playerAudio;
     private bool _isPlaying = false;
     
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         animController = hero.GetComponent<Animator> ();
         rigidBody      = GetComponent<Rigidbody>();
         currentCam = orbitCam;
-        audio = GetComponent<AudioSource>();
+        playerAudio = GetComponent<AudioSource>();
 
     }
 
@@ -98,13 +98,13 @@ public class PlayerController : MonoBehaviour
          //Toggle Footsteps
             if(isWalking && !_isPlaying)
             {
-                audio.Play();
+                playerAudio.Play();
                 _isPlaying = true;
             }
                 
             if (!isWalking && _isPlaying)
             {
-                audio.Stop();
+                playerAudio.Stop();
                 _isPlaying = false;
             }
     }
