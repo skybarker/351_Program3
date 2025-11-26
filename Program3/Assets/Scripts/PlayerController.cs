@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     Animator animController;
     Rigidbody rigidBody;
     GameObject currentCam;
+    AudioSource footsteps;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         animController = hero.GetComponent<Animator> ();
         rigidBody      = GetComponent<Rigidbody>();
         currentCam = orbitCam;
+
 
     }
 
