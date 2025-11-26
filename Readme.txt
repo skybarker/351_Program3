@@ -3,7 +3,7 @@ Luke and Autumn Barker
 
 No additional packages were added
 
-1. Cutscene Camera.  Should work per requirements though sometimes it seemed like the main camera would swap to the correct camera at the end of the animation. 
+1. Cutscene Camera.  Should work per requirements though sometimes it seemed like the main camera wouldn't swap to the correct camera at the end of the animation. 
 2. Player kick.  We used the provided kick animations. It should work per requirements using the spacebar.
 3. Shoot Targets.  The gun just hovers at the sheriff's hip.  Otherwise, it should work per requirements.
 4. Dynamic Soundtrack. We used provided sound clips. The taunts work with a sphere collider set so that if you 
