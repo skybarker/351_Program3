@@ -16,7 +16,7 @@ public class OrbitCamera : MonoBehaviour
     private Vector3 defaultPosition;
 void Start ()
 {
-    defaultPosition = transform.position;
+    defaultPosition = new Vector3(-5,3,-40);
 }
 
 void Update()
@@ -24,6 +24,7 @@ void Update()
     //Reset camera view
     if (Input.GetKeyDown(KeyCode.R))
     {
+        print("reset cam");
         transform.position = defaultPosition;
         transform.LookAt(target);
     }
