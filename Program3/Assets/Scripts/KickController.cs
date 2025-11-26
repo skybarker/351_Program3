@@ -21,15 +21,10 @@ void OnTriggerEnter(Collider col)
         if (col.gameObject.CompareTag("Kickable") || col.gameObject.CompareTag("Explosive"))
         {
             kickVector = ((player.transform.forward).normalized)*kickStrength + new Vector3(0,200,0);
-            Debug.Log("Kickable collision");
             targetRB = col.gameObject.GetComponent<Rigidbody>();
-            Debug.Log("Kickable collision with: " + col.gameObject.name);
             targetRB.AddRelativeForce(kickVector, ForceMode.Impulse);
             
-               
-
         }
-
     }
 
     // Update is called once per frame

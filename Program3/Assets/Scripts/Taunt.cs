@@ -4,16 +4,29 @@ using UnityEngine;
 
 public class Taunt : MonoBehaviour
 {
-   
-   private AudioSource YellTaunt;
+   public AudioClip taunt1;
+   public AudioClip taunt2;
+   public AudioClip taunt3;
+   private AudioClip[] taunts;
+   private AudioSource yellTaunt;
    private float tauntTimer = 0;
    private float tauntTrigger;
-   
+   public Transform target; 
+   public float rotationSpeed = 3f;
+   private Vector3 newDirection;
+   private Vector3 direction;
+
    // Start is called before the first frame update
     void Start()
     {
+        direction = transform.forward;
+        newDirection = transform.forward;
+        taunts = new AudioClip[3];
+        taunts[0] = taunt1;
+        taunts[1] = taunt2;
+        taunts[2] = taunt3;
         GameObject gc = gameObject;
-        YellTaunt = gc.GetComponent<AudioSource>();
+        yellTaunt = gc.GetComponent<AudioSource>();
         tauntTrigger = Random.Range(10f,30f);
     }
 
@@ -23,13 +36,22 @@ public class Taunt : MonoBehaviour
         tauntTimer += Time.deltaTime;
         if (tauntTimer > tauntTrigger)
         {
-            YellTaunt.Play();
-            Debug.Log("A taunt was yelled");
+            direction = (target.position - transform.position).normalized;
+            direction.y = 0f;
+            int randomIndex = Random.Range(0, 2);
+            yellTaunt.clip = taunts[randomIndex];
+            yellTaunt.Play();
 
             tauntTimer = 0;
             tauntTrigger = Random.Range(10f,30f);
-
         }
+            newDirection = Vector3.RotateTowards(transform.forward, direction, rotationSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection);
+
+        
 
     }
+
+
 }
+
