@@ -33383,6 +33383,7 @@ MonoBehaviour:
   taunt1: {fileID: 8300000, guid: 71dea3d18e410a346a732ffacf69a91b, type: 3}
   taunt2: {fileID: 8300000, guid: 4942595ae2400f643a1f595c94da3911, type: 3}
   taunt3: {fileID: 8300000, guid: 0a454a215912b9c4da0d635e0b1b4db8, type: 3}
+  enemy: {fileID: 1024511539}
   target: {fileID: 803449929}
   rotationSpeed: 3
 --- !u!82 &1024511544
@@ -52365,6 +52366,7 @@ MonoBehaviour:
   taunt1: {fileID: 8300000, guid: 61547b7946c89314586a8b64a900bf25, type: 3}
   taunt2: {fileID: 8300000, guid: c71eae5cf0a48da4080e4c9b1b4a2172, type: 3}
   taunt3: {fileID: 8300000, guid: 2bb999c32f467234b87182f74e3ceaad, type: 3}
+  enemy: {fileID: 1521267784}
   target: {fileID: 1457821293}
   rotationSpeed: 90
 --- !u!82 &1634644880
@@ -69248,6 +69250,7 @@ MonoBehaviour:
   taunt1: {fileID: 8300000, guid: ce87c21302e2e684887e70ffb1d023ab, type: 3}
   taunt2: {fileID: 8300000, guid: 8af450f34f5d3584fbfe89c52b243334, type: 3}
   taunt3: {fileID: 8300000, guid: 09432d94b8e468c4f840ffda693e15fa, type: 3}
+  enemy: {fileID: 2022679543}
   target: {fileID: 803449929}
   rotationSpeed: 3
 --- !u!82 &2022679548
@@ -69653,6 +69656,7 @@ MonoBehaviour:
   taunt1: {fileID: 8300000, guid: ad9711a9fb6a27a4a80d010ebbd83541, type: 3}
   taunt2: {fileID: 8300000, guid: 749de6eda9737504787a279fef122fca, type: 3}
   taunt3: {fileID: 8300000, guid: 1cbf86fb18bd33f49bfe2f9db0f57888, type: 3}
+  enemy: {fileID: 568051479}
   target: {fileID: 803449929}
   rotationSpeed: 3
 --- !u!82 &2033694763
