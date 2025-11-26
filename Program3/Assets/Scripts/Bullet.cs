@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float lifetime = 3f;
-    public float thrust = 1.0f;
+    public float thrust = 300.0f;
     public Rigidbody rb;
 
     void Start()
