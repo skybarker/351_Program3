@@ -8,8 +8,10 @@ public class EnemyController : MonoBehaviour
    public AudioClip taunt2;
    public AudioClip taunt3;
    public GameObject enemy;
+   public AudioClip death;
    private AudioClip[] taunts;
    private AudioSource yellTaunt;
+   
    private float tauntTimer = 0;
    private float tauntTrigger;
    public Transform target; 
@@ -56,6 +58,8 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
+        yellTaunt.clip = death;
+        yellTaunt.Play();
         animController.SetTrigger("Die");
         _isAlive = false;
     }

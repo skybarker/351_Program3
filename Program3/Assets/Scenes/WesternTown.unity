@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18146001, g: 0.22709143, b: 0.3073942, a: 1}
+  m_IndirectSpecularColor: {r: 0.18145978, g: 0.22709113, b: 0.30739337, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33577,6 +33577,7 @@ MonoBehaviour:
   taunt2: {fileID: 8300000, guid: 4942595ae2400f643a1f595c94da3911, type: 3}
   taunt3: {fileID: 8300000, guid: 0a454a215912b9c4da0d635e0b1b4db8, type: 3}
   enemy: {fileID: 1024511539}
+  death: {fileID: 8300000, guid: 0285539df00d18a4a99fc4c5acd7d7f9, type: 3}
   target: {fileID: 803449929}
   rotationSpeed: 3
 --- !u!82 &1024511544
@@ -53120,6 +53121,7 @@ MonoBehaviour:
   taunt2: {fileID: 8300000, guid: c71eae5cf0a48da4080e4c9b1b4a2172, type: 3}
   taunt3: {fileID: 8300000, guid: 2bb999c32f467234b87182f74e3ceaad, type: 3}
   enemy: {fileID: 1521267784}
+  death: {fileID: 8300000, guid: 5606c828eea093d42ab7b6312c0e906a, type: 3}
   target: {fileID: 1457821293}
   rotationSpeed: 90
 --- !u!82 &1634644880
@@ -70004,6 +70006,7 @@ MonoBehaviour:
   taunt2: {fileID: 8300000, guid: 8af450f34f5d3584fbfe89c52b243334, type: 3}
   taunt3: {fileID: 8300000, guid: 09432d94b8e468c4f840ffda693e15fa, type: 3}
   enemy: {fileID: 2022679543}
+  death: {fileID: 8300000, guid: fa5bf05bc9ec4d34daac4ca6beb254b4, type: 3}
   target: {fileID: 803449929}
   rotationSpeed: 3
 --- !u!82 &2022679548
@@ -70410,6 +70413,7 @@ MonoBehaviour:
   taunt2: {fileID: 8300000, guid: 749de6eda9737504787a279fef122fca, type: 3}
   taunt3: {fileID: 8300000, guid: 1cbf86fb18bd33f49bfe2f9db0f57888, type: 3}
   enemy: {fileID: 568051479}
+  death: {fileID: 8300000, guid: 344f4457f52dbfe4395a755178b940e9, type: 3}
   target: {fileID: 803449929}
   rotationSpeed: 3
 --- !u!82 &2033694763
