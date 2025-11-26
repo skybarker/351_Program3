@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
    private Vector3 newDirection;
    private Vector3 direction;
    private Animator animController;
-   private bool _isAlive = true;
+   private bool _shouldTaunt = false;
    
    // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_isAlive){
+        if(_shouldTaunt){
             tauntTimer += Time.deltaTime;
             if (tauntTimer > tauntTrigger)
             {
@@ -61,8 +61,16 @@ public class EnemyController : MonoBehaviour
         audio.clip = death;
         audio.Play();
         animController.SetTrigger("Die");
-        _isAlive = false;
+        _shouldTaunt = false;
     }
-
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        _shouldTaunt = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        _shouldTaunt = false;
+    }
 }
 
