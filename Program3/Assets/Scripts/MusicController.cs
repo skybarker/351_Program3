@@ -75,6 +75,18 @@ public class MusicController : MonoBehaviour
  
     }
 
+    public void playSuspense()
+    {
+        SwitchMusic(MusicType.Suspense);
+ 
+    }
+
+    public void playDefault()
+    {
+        SwitchMusic(MusicType.Default);
+ 
+    }
+
     // Start is called before the first frame update
     void Start()
     {
