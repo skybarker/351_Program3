@@ -8,7 +8,9 @@ TagManager:
   - Enemy
   - Kickable
   - DeathSound
-  - Bullet
+  - Animation
+  - vcam
+  - PlayerCam
   layers:
   - Default
   - TransparentFX

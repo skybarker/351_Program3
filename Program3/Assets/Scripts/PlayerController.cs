@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables; 
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,9 +9,12 @@ public class PlayerController : MonoBehaviour
     public float impulseTorque = 3000.0f;
 
     public GameObject hero;
-
+    public PlayableDirector director;
+    public GameObject pCam;
+    Animation anim;
     Animator animController;
     Rigidbody rigidBody;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,7 @@ public class PlayerController : MonoBehaviour
         // character and player's corresponding rigid body
         animController = hero.GetComponent<Animator> ();
         rigidBody      = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -31,10 +36,12 @@ public class PlayerController : MonoBehaviour
         {
             animController.SetTrigger("Kick");
             animController.SetInteger("KickID", Random.Range(0, 99));
+        }
 
-            //rigidBody.AddRelativeForce(input.x * Time.deltaTime, 0, input.y * Time.deltaTime);
-            //rigidBody.AddRelativeTorque(0, lookValue * Time.deltaTime,0);
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            director.Stop();
+            pCam.SetActive(true);
         }
 
         // allow movement when input detected and not crouching
