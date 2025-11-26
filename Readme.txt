@@ -8,10 +8,10 @@ No additional packages were added
 3. Shoot Targets.  The gun just hovers at the sheriff's hip.  Otherwise, it should work per requirements.
 4. Dynamic Soundtrack. We used provided sound clips. The taunts work with a sphere collider set so that if you 
 enter the sphere the bandit immediately taunts and then will randomly taunt ever 10-30 seconds if you continue to stay in the sphere.
-5. Toggle the Camera.  There are two virtual cameras that toggle between the first person and orbit camera using the T key.  The reset key isn't currently working but would use the R key. 
+5. Toggle the Camera.  There are two virtual cameras that toggle between the first person and orbit camera using the T key.  We found a code snipped to include a zoom in/out using the scroll button too.  The reset key isn't currently working but would use the R key. 
 
 ______________________________________________________
-Program 3 Template (Starter Code) - v. 1.0
+Program 3 Template (Starter Code) - v. 1.0d
 School of Information, University of Arizona 
 Feb. 12, 2023
 
