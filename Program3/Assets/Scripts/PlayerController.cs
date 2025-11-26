@@ -13,10 +13,13 @@ public class PlayerController : MonoBehaviour
     public PlayableDirector director;
     public GameObject orbitCam;
     public GameObject firstPersonCam;
+    public AudioClip footsteps;
     Animator animController;
     Rigidbody rigidBody;
     GameObject currentCam;
-    AudioSource footsteps;
+    private AudioSource audio;
+    private bool _isPlaying = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +29,7 @@ public class PlayerController : MonoBehaviour
         animController = hero.GetComponent<Animator> ();
         rigidBody      = GetComponent<Rigidbody>();
         currentCam = orbitCam;
-
+        audio = GetComponent<AudioSource>();
 
     }
 
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
             // motion is forward/backward (about z axis)
             rigidBody.AddRelativeForce(new Vector3(0, 0, input.z * impulseForce * Time.deltaTime));
             animController.SetBool("Walk", true);
+            PlayFootsteps(true);
         }
         else
         {
@@ -53,6 +57,9 @@ public class PlayerController : MonoBehaviour
                 animController.SetBool("Crouch", true);
             else
                 animController.SetBool("Crouch", false);
+            
+            PlayFootsteps(false);
+
         }
 
         //Kick
@@ -84,7 +91,21 @@ public class PlayerController : MonoBehaviour
                 currentCam = orbitCam; 
            }
         }
+    }
 
-
+    void PlayFootsteps(bool isWalking)
+    {
+         //Toggle Footsteps
+            if(isWalking && !_isPlaying)
+            {
+                audio.Play();
+                _isPlaying = true;
+            }
+                
+            if (!isWalking && _isPlaying)
+            {
+                audio.Stop();
+                _isPlaying = false;
+            }
     }
 }

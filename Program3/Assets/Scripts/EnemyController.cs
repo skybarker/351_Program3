@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
    public GameObject enemy;
    public AudioClip death;
    private AudioClip[] taunts;
-   private AudioSource yellTaunt;
+   private AudioSource audio;
    
    private float tauntTimer = 0;
    private float tauntTrigger;
@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
         taunts[0] = taunt1;
         taunts[1] = taunt2;
         taunts[2] = taunt3;
-        yellTaunt = enemy.GetComponent<AudioSource>();
+        audio = enemy.GetComponent<AudioSource>();
         tauntTrigger = Random.Range(10f,30f);
         animController = enemy.GetComponent<Animator>();
     }
@@ -45,8 +45,8 @@ public class EnemyController : MonoBehaviour
                 direction = (target.position - transform.position).normalized;
                 direction.y = 0f;
                 int randomIndex = Random.Range(0, 2);
-                yellTaunt.clip = taunts[randomIndex];
-                yellTaunt.Play();
+                audio.clip = taunts[randomIndex];
+                audio.Play();
 
                 tauntTimer = 0;
                 tauntTrigger = Random.Range(10f,30f);
@@ -58,8 +58,8 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        yellTaunt.clip = death;
-        yellTaunt.Play();
+        audio.clip = death;
+        audio.Play();
         animController.SetTrigger("Die");
         _isAlive = false;
     }
