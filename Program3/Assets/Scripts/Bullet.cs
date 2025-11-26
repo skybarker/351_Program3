@@ -27,7 +27,9 @@ public class Bullet : MonoBehaviour
             // Destroy the enemy
             //Enemy_shot = col.gameObject.GetComponent<AudioSource>();
             //Enemy_shot.Play();
-            Destroy(col.gameObject);
+            Animator animController = col.gameObject.GetComponent<Animator> ();
+            animController.SetTrigger("Die");
+            //Destroy(col.gameObject);
                
 
             // Destroy the bullet
