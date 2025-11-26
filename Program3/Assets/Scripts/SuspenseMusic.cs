@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class SuspenseMusic : MonoBehaviour
 {    
+
+    private MusicController music;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+    GameObject gc = GameObject.FindGameObjectWithTag("GameController"); 
+    music = gc.GetComponent<MusicController>();
     }
 
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         Debug.Log("Player entered the trigger zone!");
-    //         Suspense.Play();
-    //     }
-    // }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            music.playSuspense();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            music.playDefault();
+        }
     }
 }
