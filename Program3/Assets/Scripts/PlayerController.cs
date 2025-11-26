@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rigidBody;
     GameObject currentCam;
     private AudioSource playerAudio;
-    private bool _isPlaying = false;
+    private bool _isPlaying = true;
     
 
     // Start is called before the first frame update
