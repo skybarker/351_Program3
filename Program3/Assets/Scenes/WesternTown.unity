@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18146001, g: 0.22709143, b: 0.3073942, a: 1}
+  m_IndirectSpecularColor: {r: 0.18145978, g: 0.22709113, b: 0.30739337, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36876,7 +36876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0.1232554, y: 1.7600001, z: 0.27912685}
+  m_FollowOffset: {x: 0.1232554, y: 1.7600001, z: 0.5840013}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -39334,7 +39334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184133952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.468, y: 1.646, z: 1.798}
+  m_LocalPosition: {x: 0.1232554, y: 1.7600001, z: 0.58399963}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55718,7 +55718,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 0aeed03f3aa23cf45aae499cadc7bac1, type: 2}
   m_InitialState: 1
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 2
   m_SceneBindings:
@@ -61784,12 +61784,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 803449929}
   rotationSpeed: 5
-  minYAngle: -20
-  maxYAngle: 80
   zoomSpeed: 2
-  minDistance: 2
-  maxDistance: 15
-  resetKey: 114
+  minZoom: 5
+  maxZoom: 20
 --- !u!114 &1804014476
 MonoBehaviour:
   m_ObjectHideFlags: 0
