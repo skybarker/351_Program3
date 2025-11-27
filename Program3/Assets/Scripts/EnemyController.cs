@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
    private Vector3 direction;
    private Animator animController;
    private bool _shouldTaunt = false;
+   private bool _isAlive = true;
+
    
    // Start is called before the first frame update
     void Start()
@@ -56,6 +58,7 @@ public class EnemyController : MonoBehaviour
         enemyAudio.Play();
         animController.SetTrigger("Die");
         _shouldTaunt = false;
+        _isAlive = false;
     }
     
     private void OnTriggerEnter(Collider other)
@@ -74,13 +77,16 @@ public class EnemyController : MonoBehaviour
 
     private void Taunt()
     {
-        direction = (target.position - transform.position).normalized;
-        direction.y = 0f;
-        int randomIndex = Random.Range(0, 2);
-        enemyAudio.clip = taunts[randomIndex];
-        enemyAudio.Play();
-        newDirection = Vector3.RotateTowards(transform.forward, direction, rotationSpeed * Time.deltaTime, 0.0f);
-        transform.rotation = Quaternion.LookRotation(newDirection);
+        if(_isAlive)
+        {
+            direction = (target.position - transform.position).normalized;
+            direction.y = 0f;
+            int randomIndex = Random.Range(0, 2);
+            enemyAudio.clip = taunts[randomIndex];
+            enemyAudio.Play();
+            newDirection = Vector3.RotateTowards(transform.forward, direction, rotationSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection);
+        }
     }
 }
 
